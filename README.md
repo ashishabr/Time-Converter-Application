@@ -8,13 +8,13 @@ To tackle the intricate world of time zones and timestamps, I've designed and de
 
 # Description:
 
-# Features:
+## Features:
 
-Time Zone Conversion: Convert date and time between time zones.
-Timestamp Conversion: Switch between timestamps and human-readable date-time.
-User-Friendly: Intuitive interface for easy date and time management.
-Cross-Platform: Accessible via web browsers and mobile devices.
-Error Handling: Provides user-friendly error messages for improved usability.
+* **Time Zone Conversion**: Convert date and time between time zones.
+* **Timestamp Conversion**: Switch between timestamps and human-readable date-time.
+* **User-Friendly**: Intuitive interface for easy date and time management.
+* **Cross-Platform**: Accessible via web browsers and mobile devices.
+* **Error Handling**: Provides user-friendly error messages for improved usability.
 
-# Technology Stack:
+## Technology Stack:
 Frontend: HTML, CSS, JavaScript
