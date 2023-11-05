@@ -16,5 +16,3 @@ To tackle the intricate world of time zones and timestamps, I've designed and de
 * **Cross-Platform**: Accessible via web browsers and mobile devices.
 * **Error Handling**: Provides user-friendly error messages for improved usability.
 
-## Technology Stack:
-Frontend: HTML, CSS, JavaScript
