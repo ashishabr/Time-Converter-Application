@@ -1,4 +1,4 @@
-# Time-Converter-Application
+# Time Bridge
 
 # Problem: 
 In today's interconnected world, managing time across different time zones and handling timestamps is a common challenge. It affects a wide range of activities, from scheduling international business meetings to coordinating travel plans and simply staying in touch with friends and colleagues across the globe. There's a need for a practical and user-friendly solution to simplify these complex tasks.
