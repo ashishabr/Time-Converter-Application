@@ -72,6 +72,7 @@ function render_date_content(){
 	if(isUnixTimestamp(time_str)){
 		let timestamp = parseInt(time_str, 10) * 1000;
 		date = new Date(timestamp);
+		timestamp_from_str = time_str;
 	}else if(time_str){
 		let str_to_date = convert_chrono_time(time_str);
 		date = (str_to_date.length > 0) ?  str_to_date[0].start.date() : '';
