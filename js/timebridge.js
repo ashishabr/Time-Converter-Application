@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // initialize elements
     $('.timeformat').selectize();
     $('.timezone').selectize({
 	    plugins: ['remove_button'],
@@ -14,27 +15,30 @@ $(document).ready(function() {
 	if(timeformat){
 		timeformat_elem.setValue(timeformat);
 	}
-
+	// call to fn to render converted date by timezone and date format
 	render_date_content();
 });	
-
+// Show date convert content
 $(document).off('click','.date_conv');
 $(document).on('click','.date_conv',function(e){
 	e.preventDefault();
 	$('.date_conv_content').show();
 	$('.date_diff_content').hide();
 });
+// Show date difference content
 $(document).off('click','.date_diff');
 $(document).on('click','.date_diff',function(e){
 	e.preventDefault();
 	$('.date_diff_content').show();
 	$('.date_conv_content').hide();
 });
+// submit NLP time or timestamp
 $(document).off('click','.submit_time');
 $(document).on('click','.submit_time',function(e){
 	e.preventDefault();
 	render_date_content();
 });
+// Copy timestamp to clipboard
 $(document).off('click','.copy_clipboard');
 $(document).on('click','.copy_clipboard',function(e){
 	e.preventDefault();
@@ -49,7 +53,7 @@ $(document).on('click','.copy_clipboard',function(e){
 		elem.attr('data-tooltip','Copy to clipboard');
 	}, 1000);
 });
-
+// function to render time convertion
 function render_date_content(){
 
 	let time_str = $('.hero-section').find('#keyword').val();
@@ -66,7 +70,6 @@ function render_date_content(){
 	let timestamp_from_str = date.getTime();
 	timestamp_from_str = Math.floor(timestamp_from_str / 1000);		
 	if(isUnixTimestamp(time_str)){
-		// For time stamp
 		let timestamp = parseInt(time_str, 10) * 1000;
 		date = new Date(timestamp);
 	}else if(time_str){
@@ -100,7 +103,7 @@ function render_date_content(){
 	
 }
 
-// convert string to date
+// convert string to date using NLP
 function convert_chrono_time(text){
 
     var referenceDate = new Date();
@@ -125,14 +128,14 @@ function isUnixTimestamp(input) {
     return false;
 }
 
-
+// Render date diffrence between two dates
 $(document).off('click','.submit_diff_time');
 $(document).on('click','.submit_diff_time', function(e){
 	e.preventDefault();
 	let elem = $(this);
 	let date_1 = $('.date_diff_wrap').find('#date_1').val();
 	let date_2 = $('.date_diff_wrap').find('#date_2').val();
-	let diffDays = getDateDifference(date_1,date_2); 
+	let diffDays = getDateDifference(date_1,date_2); //call fn to find difference between 2 dates
 	$('.time_diff_text').html(`
 								<p>There are <b>${diffDays.years} Years</b> between ${date_1} and ${date_2}</p>
 								<p>There are <b>${diffDays.months} Months</b> between ${date_1} and ${date_2}</p>
@@ -141,6 +144,7 @@ $(document).on('click','.submit_diff_time', function(e){
 						`);
 });
 
+// Render date difference between two dates using NLP on keyup
 $(document).off('keyup','#diff_keyword');
 $(document).on('keyup','#diff_keyword', function(e){
 	e.preventDefault();
@@ -169,6 +173,7 @@ $(document).on('keyup','#diff_keyword', function(e){
 	
 });
 
+// date to DD/MM/YYYY format
 function formattedDate(date_str) {
 	
 	let inputDate = new Date(date_str);
@@ -180,6 +185,8 @@ function formattedDate(date_str) {
 	let formattedDate = `${day}/${month}/${year}`;
 	return formattedDate;
 }
+
+// function to find difference between 2 dates
 function getDateDifference(date1, date2) {
   const start = new Date(date1);
   const end = new Date(date2);
