@@ -152,7 +152,7 @@ $(document).on('keyup','#diff_keyword', function(e){
 	let elem = $(this);
 	let date_str = elem.val();
 	let date_arr = convert_chrono_time(date_str);
-	console.log(date_arr);
+	// console.log(date_arr);
 	if(date_arr.length > 1){
 		let date_1 = date_arr[0].start.date();
 		let date_2 = date_arr[1].start.date();
