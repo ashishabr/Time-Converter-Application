@@ -1,6 +1,6 @@
 # Introduction:
 
-* Welcome to the Date Converter and Difference Finder web application! This project aims to provide a user-friendly interface for converting strings or timestamps to proper dates, with the flexibility to choose date formats and timezones. Additionally, it offers a feature to find the difference between two dates, either by selecting them or using natural language processing (NLP).
+* Welcome to the Time Bridge! This project aims to provide a user-friendly interface for converting strings or timestamps to proper dates, with the flexibility to choose date formats and timezones. Additionally, it offers a feature to find the difference between two dates, either by selecting them or using natural language processing (NLP).
 Features:
 
 # Input Tab:
