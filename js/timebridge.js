@@ -58,7 +58,11 @@ function render_date_content(){
 
 	let time_str = $('.hero-section').find('#keyword').val();
 	let time_components = $('.featured-section');
-
+	if(time_str.length > 100){
+		$('.timestamp_content').remove();
+		$('.time_content').html(`<span class="no_data">A maximum of 100 words is permitted.</span>`);
+		return false;
+	}
 	let timezone = time_components.find('#timezone').val();
 	let timeformat = time_components.find('#timeformat').val();
 	let timezone_str = JSON.stringify(timezone);
@@ -151,6 +155,11 @@ $(document).on('keyup','#diff_keyword', function(e){
 	e.preventDefault();
 	let elem = $(this);
 	let date_str = elem.val();
+
+	if(date_str.length > 100){
+		$('.time_diff_text').html(`<span class="no_data">A maximum of 100 words is permitted.</span>`);
+		return false;
+	}
 	let date_arr = convert_chrono_time(date_str);
 	// console.log(date_arr);
 	if(date_arr.length > 1){
